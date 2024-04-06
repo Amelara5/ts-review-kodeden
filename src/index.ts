@@ -16,3 +16,12 @@ const filteredProducts = catalog.filter((item) => {
 });
 
 console.log(filteredProducts);
+
+//  2. Map out a catalog with just the name and price
+
+const shortCatalog = catalog.map((item) => {
+  return { name: item.name, price: item.price };
+});
+
+console.log(shortCatalog);
+
