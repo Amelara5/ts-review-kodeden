@@ -7,13 +7,9 @@ console.log(productNames);
 //  1. Filter products by a specific category.
 
 const category1 = "Accessories";
-// const category2 = "Clothing";
+const category2 = "Clothing";
 
-const filteredProducts = catalog.filter((item) => {
-  if (item.category === category1) {
-    return item;
-  }
-});
+const filteredProducts = catalog.filter((item) => item.category === category1);
 
 console.log(filteredProducts);
 
@@ -36,4 +32,8 @@ console.log(totalPrice);
 
 //  4. Write a function that takes in the catalog and a category, filters by category and then returns the total price of all products in that category.
 
-const 
+function filteredItems() {
+  return "";
+}
+
+console.log(filteredItems);
