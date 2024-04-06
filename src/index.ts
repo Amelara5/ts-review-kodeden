@@ -32,8 +32,13 @@ console.log(totalPrice);
 
 //  4. Write a function that takes in the catalog and a category, filters by category and then returns the total price of all products in that category.
 
-function filteredItems() {
-  return "";
+function filteredItems(catalog, category: string): number {
+  const filteredItems = catalog.filter((item) => item.category === category);
+  const totalPriceForFilteredItems: number = filteredItems.reduce(
+    (accumulator: number, currentItem) => accumulator + currentItem.price,
+    0,
+  );
+  return totalPriceForFilteredItems;
 }
 
-console.log(filteredItems);
+console.log(filteredItems(catalog, category2));
