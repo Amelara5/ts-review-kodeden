@@ -32,8 +32,16 @@ console.log(totalPrice);
 
 //  4. Write a function that takes in the catalog and a category, filters by category and then returns the total price of all products in that category.
 
-function filteredItems(catalog, category: string): number {
-  const filteredItems = catalog.filter((item) => item.category === category);
+//  For me to properly give 'catalog' its type I have to create an 'interface' with all of the properties that 'catalog' has. When using interfaces remember to capitalize the use camel case (capitalize every first word).
+
+interface Product {
+  name: string;
+  price: number;
+  category: "Clothing" | "Accessories";
+}
+
+function filteredItems(cat: Product[], category: string): number {
+  const filteredItems = cat.filter((item) => item.category === category);
   const totalPriceForFilteredItems: number = filteredItems.reduce(
     (accumulator: number, currentItem) => accumulator + currentItem.price,
     0,
@@ -41,4 +49,4 @@ function filteredItems(catalog, category: string): number {
   return totalPriceForFilteredItems;
 }
 
-console.log(filteredItems(catalog, category2));
+console.log(filteredItems(catalog as Product[], category2));
