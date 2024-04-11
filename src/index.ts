@@ -97,10 +97,12 @@ async function myWeather() {
 //  Closure Exercises
 //  Create a function createCounter that uses a closure to maintain the state of a counter and returns an object with two methods: increment and getCount.
 
-function createCounter() {
+function createCounter(): any {
   let count = 0;
   function increment(): void {
+    console.log("The function was called");
     count = count + 1;
+    console.log(count);
   }
 
   function getCount(): number {
@@ -110,4 +112,11 @@ function createCounter() {
   return { increment, getCount };
 }
 
-createCounter().increment();
+const counter = createCounter();
+counter.increment();
+counter.increment();
+console.log("CLOSURE ", counter.getCount());
+// createCounter().increment();
+// createCounter().increment();
+
+// console.log("CLOSURE EXERCISE ", createCounter().count);
