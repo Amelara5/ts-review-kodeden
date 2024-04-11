@@ -69,3 +69,28 @@ async function callAPI(URL: string): Promise<string> {
 }
 
 console.log(callAPI(urlOfAPI));
+
+//  OpenWeatherMap API
+//  1. Create an account and get an API key.
+//  2. Use the API to fetch the current weather for your city and log the result.
+
+//  lat = 38.789280
+//  long = -77.187204
+
+const lat = 44.34;
+const long = 10.99;
+
+const coordinates = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}lon=${long}&appid=9335ce1949d9e65b7903ad076087bdba&units=metric`;
+
+async function myWeather() {
+  try {
+    const res = await fetch(coordinates);
+    const json = await res.json();
+    console.log(json);
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+// myWeather();
+
