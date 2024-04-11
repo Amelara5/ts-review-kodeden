@@ -4,6 +4,7 @@ const productNames = catalog.map((item) => item.name);
 
 console.log(productNames);
 
+//  Array Methods Exercises
 //  1. Filter products by a specific category.
 
 const category1 = "Accessories";
@@ -50,3 +51,21 @@ function filteredItems(cat: Product[], category: string): number {
 }
 
 console.log(filteredItems(catalog as Product[], category2));
+
+//  Promise Exercises
+//  1. Create a function that fetches data from an API using Promises. The function should accept a URL as a parameter and return a Promise that resolves to the parsed JSON data.
+//  2. Use the function to fetch data from a sample API and log the result. (https://jsonplaceholder.typicode.com/todos/1)
+//  3. Modify the function to use async/await syntax instead of .then() and .catch().
+
+const urlOfAPI: string = "https://jsonplaceholder.typicode.com/todos/1";
+
+async function callAPI(URL: string): Promise<string> {
+  try {
+    const res = await fetch(URL);
+    const json = await res.json();
+    console.log(json);
+    return json;
+  } catch (error) {}
+}
+
+console.log(callAPI(urlOfAPI));
