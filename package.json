@@ -17,5 +17,8 @@
     "start": "node --watch dist/index.js",
     "test": "tap run"
   },
-  "type": "module"
+  "type": "module",
+  "dependencies": {
+    "zod": "^3.22.4"
+  }
 }
