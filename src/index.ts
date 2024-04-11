@@ -63,7 +63,7 @@ async function callAPI(URL: string): Promise<string> {
   try {
     const res = await fetch(URL);
     const json = await res.json();
-    console.log(json);
+    // console.log(json);
     return json;
   } catch (error) {}
 }
@@ -94,3 +94,20 @@ async function myWeather() {
 
 // myWeather();
 
+//  Closure Exercises
+//  Create a function createCounter that uses a closure to maintain the state of a counter and returns an object with two methods: increment and getCount.
+
+function createCounter() {
+  let count = 0;
+  function increment(): void {
+    count = count + 1;
+  }
+
+  function getCount(): number {
+    return count;
+  }
+
+  return { increment, getCount };
+}
+
+createCounter().increment();
